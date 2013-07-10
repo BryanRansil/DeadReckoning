@@ -21,6 +21,8 @@ The goal for this summer is to get an application which spawns an object in real
 Setup
 --------------
 **Main Activity** Operates many of the components, manages the operation.
+
 (Static) **Movement Class** Combines the Accelerometer and Compass and presents the current position and acceleration to the Main Activity Class
+
 (Static) **World Class**. Loads the 3d models we want to see. Displays them. Owns a Camera Preview object.
  - (Static) **Camera Preview Class**. Shows the real world. Only accessed by the World Class, because the World needs to set the background to be the current scene
