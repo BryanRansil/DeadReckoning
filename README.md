@@ -12,9 +12,9 @@ Our priorities will be getting the first two components to work since movement d
 
 The goal for this summer is to get an application which spawns an object in real space and allows the user to move around the object relatively smoothly. This involves moving the camera in OpenGL according to the movement readings.
 
-The original vision for the class setup goes like this:
-
-Main Activity Class. Operates many of the components.
+Setup
+--------------
+Main Activity Class. Operates many of the components, manages the operation.
 (Static) Movement Class. Combines the Accelerometer and Compass and presents the current position and acceleration to the Main Activity Class
 (Static) World Class. Loads the 3d models we want to see. Displays them. Owns a Camera Preview object.
-	(Static) Camera Preview Class. Shows the real world. Only accessed by the World Class.
+	(Static) Camera Preview Class. Shows the real world. Only accessed by the World Class, because the World needs to set the background to be the current scene
