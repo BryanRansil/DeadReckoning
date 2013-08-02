@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DeadReckoningAR</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="edit_message">Enter a blue</string>
+    <string name="button_text">Send</string>
+    <string name="title_activity_ar">AR Viewer</string>
+
+</resources>
