@@ -11,7 +11,8 @@ import android.widget.EditText;
 
 public class MainActivity extends Activity {
 	public final static String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
-
+	private int counter = 0;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -31,5 +32,10 @@ public class MainActivity extends Activity {
 		String message = editText.getText().toString();
 		intent.putExtra(EXTRA_MESSAGE, message);
 		startActivity(intent);
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
 	}
 }

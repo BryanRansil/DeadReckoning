@@ -1,7 +1,9 @@
 package com.coderealities.deadreckoningar;
 
 import com.coderealities.deadreckoningar.R;
+import com.coderealities.deadreckoningar.WorldRenderer;
 
+import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -15,6 +17,8 @@ import android.os.Build;
 
 public class ARActivity extends Activity {
 
+    private GLSurfaceView mGLView;
+    
 	@SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,12 +26,16 @@ public class ARActivity extends Activity {
         
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
-        
+        /*
         TextView textView = new TextView(this);
         textView.setTextSize(40);
         textView.setText(message);
         
-        setContentView(textView);
+        setContentView(textView);*/
+        
+        mGLView = new GLSurfaceView(this);
+        mGLView.setRenderer(new WorldRenderer(this));
+        setContentView(mGLView);
         
         // Make sure we're running on Honeycomb or higher to use ActionBar APIs
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
@@ -61,6 +69,18 @@ public class ARActivity extends Activity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+    
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mGLView.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mGLView.onResume();
     }
 
 }
